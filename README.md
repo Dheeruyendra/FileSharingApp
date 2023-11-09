@@ -25,9 +25,9 @@
 To set up the application on your local machine, follow these steps:
 
 1. Clone the repository to your local machine.
-2. Install dependencies for both frontend and backend.
-3. Start the backend server.
-4. Launch the frontend by opening `index.html` in a browser or using a server (e.g., using live-server).
+2. Install dependencies for both frontend and backend using npm install.
+3. Start the backend server with node server.js.
+4. Launch the frontend using npm start.
 
 ## Contributing
 
