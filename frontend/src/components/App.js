@@ -1,5 +1,5 @@
 import React, {useRef, useState, useEffect} from "react";
-import {uploadFile} from "./Api.js";
+import {uploadFile} from "./Api";
 
 function App(){
 

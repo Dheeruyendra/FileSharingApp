@@ -15,7 +15,8 @@ export const uploadImage = async (req, res) => {
            });
      }
      catch(error){
-         console.log(error);
+         console.log(error.message);
+         res.status(500).json({error : error.message});
      }
 };
 
@@ -29,6 +30,6 @@ export const getImage = async (req, res) => {
     }
     catch(error){
         console.log(error.message);
-        res.status(500).json({msg : error.message});
+        res.status(500).json({error : error.message});
     }
 };
