@@ -4,6 +4,7 @@ import bcrypt from 'bcrypt';
  dotenv.config();
 
 export const uploadImage = async (req, res) => {
+    console.log(req.file);
      const fileObj = {
         path: req.file.path,
         name: req.file.originalname,
@@ -11,8 +12,8 @@ export const uploadImage = async (req, res) => {
      try{
            const file = await File.create(fileObj);
            res.status(200).json({
-            path: `http://localhost:3000/file/${file._id}`,
-           });
+            path: `http://localhost:8000/file/${file._id}`
+           })
      }
      catch(error){
          console.log(error.message);
@@ -22,7 +23,7 @@ export const uploadImage = async (req, res) => {
 
 export const getImage = async (req, res) => {
     try{
-        const file = await File.findById(req.params.id);
+        const file = await File.findById(req.params.fileId);
         file.downloadCount++;
         await file.save();
 
